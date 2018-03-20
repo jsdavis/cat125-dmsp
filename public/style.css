@@ -49,6 +49,10 @@ img {
     margin: auto;
 }
 
+img.weapon {
+  display: inline-block;
+}
+
 hr {
   box-sizing: content-box;
   height: 0;
