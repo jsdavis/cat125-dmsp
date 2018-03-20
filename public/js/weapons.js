@@ -20,17 +20,35 @@ function weapon() {
   const container = document.getElementById('weapon_box');
   container.innerHTML = '<div class="loader"></div>';
 
-  let box = [ weapons[get_weapon()], weapons[get_weapon()] ];
-  while (box[0] === box[1]) {
-    box[1] = weapons[get_weapon()];
-  }
+  let box = ['',''];
+  let rarities = ['','']
+
+  let idx = get_weapon();
+  box[0] = weapons[idx];
+  rarities[0] = idx < 8 ? 'common' : idx < 12 ? 'rare' : 'legendary';
+
+  do {
+    idx = get_weapon()
+    box[1] = weapons[idx];
+    rarities[1] = idx < 8 ? 'common' : idx < 12 ? 'rare' : 'legendary';
+  } while (box[0] === box[1]);
 
   const boxDiv = document.createElement('div');
-  box.forEach(weapon => {
+  box.forEach((weapon, idx) => {
+    let div = document.createElement('div');
+    div.classList.add('weapon');
+
     let img = document.createElement('img');
     img.classList.add('weapon');
     img.src = weapon_path + weapon + weapon_ext;
-    boxDiv.appendChild(img);
+    div.appendChild(img);
+
+    let rarity = document.createElement('div');
+    rarity.classList.add('rarity');
+    rarity.classList.add(rarities[idx]);
+    div.appendChild(rarity);
+
+    boxDiv.appendChild(div);
   });
 
   setTimeout(() => container.innerHTML = boxDiv.innerHTML, 2250);

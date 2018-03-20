@@ -50,8 +50,33 @@ img {
 }
 
 img.weapon {
+  max-width: 100%;
+  margin-bottom: 0.75em;
+}
+
+div.weapon {
+  margin: auto;
   display: inline-block;
   max-width: 40%;
+}
+
+div.rarity {
+  height: 2em;
+  width: 2em;
+  margin: auto;
+  border-radius: 35%;
+}
+
+.common {
+  background-color: grey;
+}
+
+.rare {
+  background-color: blue;
+}
+
+.legendary {
+  background-color: orange;
 }
 
 hr {
