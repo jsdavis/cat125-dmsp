@@ -1,18 +1,9 @@
 const CACHE_NAME = "dmsp-cache-v0";
 const urlsToCache = [
-  // "/style.css",
-  // "/style.css",
-  // "/assets/icon-128x128.png",
-  // "/assets/icon-144x144.png",
-  // "/assets/icon-152x152.png",
-  // "/assets/icon-192x192.png",
-  // "/assets/icon-384x384.png",
-  // "/assets/icon-512x512.png",
-  // "/assets/icon-72x72.png",
-  // "/assets/icon-96x96.png"
+  "/assets/background.jpg",
+  "/assets/box.png"
 ];
 
-/*
 self.addEventListener("install", event => {
   // Open a cache for our app
   event.waitUntil(caches.open(CACHE_NAME).then(cache => {
@@ -30,6 +21,8 @@ self.addEventListener("fetch", event => {
     let fetchReq = event.request.clone();
 
     return fetch(fetchReq).then(response => {
+      /* Following code caches everything. Only use in prod when done
+
       // Don't cache invalid responses
       if (!response || response.status !== 200 || response.type !== "basic")
         return response;
@@ -39,9 +32,9 @@ self.addEventListener("fetch", event => {
       caches.open(CACHE_NAME).then(cache => {
         cache.put(event.request, resToCache);
       });
+      */
 
       return response;
     });
   }));
 });
-*/
