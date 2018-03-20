@@ -10,7 +10,7 @@ function weightedRand(spec) {
 
 const weapon_path = '/assets/weapons/';
 const weapon_ext = '.jpg';
-const weapons = [ 'armored_gauntlet', 'dh-17', 'dl-44', 'e-11', 'gaffi_stick', 'hand_cannon', 'tattooine_hunting_rifle', 'vibroblade', 'a280', 't-21', 'vibro-ax', 'vibrosword', 'pulse_cannon', 'force_pike' ];
+const weapons = [ 'armored_gauntlets', 'dh-17', 'dl-44', 'e-11', 'gaffi_stick', 'hand_cannon', 'tattooine_hunting_rifle', 'vibroblade', 'a280', 't-21', 'vibro-ax', 'vibrosword', 'pulse_cannon', 'force_pike' ];
 const get_weapon = weightedRand({ 0: 0.09, 1: 0.09, 2: 0.09, 3: 0.09,
                                   4: 0.09, 5: 0.09, 6: 0.09, 7: 0.09,
                                   8: 0.05, 9: 0.05, 10: 0.05, 11: 0.05,
@@ -21,6 +21,9 @@ function weapon() {
   container.innerHTML = '<div class="loader"></div>';
 
   let box = [ weapons[get_weapon()], weapons[get_weapon()] ];
+  while (box[0] === box[1]) {
+    box[1] = weapons[get_weapon()];
+  }
 
   const boxDiv = document.createElement('div');
   box.forEach(weapon => {
