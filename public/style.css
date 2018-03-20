@@ -6,8 +6,7 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 100%;
-    overflow: hidden;
+    height: 110%;
     font-family: 'Roboto Condensed', 'Open Sans', sans-serif;
 }
 
