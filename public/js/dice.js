@@ -10,8 +10,8 @@ function weightedRand(spec) {
 }
 
 const dice_colors = ['red', 'green', 'blue', 'yellow'];
-const num_dice = weightedRand({ 1: .05, 2: .20,
-                                3: .65, 4: .07, 5: .03 });
+const num_dice = weightedRand({ 1: .8, 2: .12,
+                                3: .50, 4: .18, 5: .12 });
 
 function dice() {
   const container = document.getElementById('dice_box');
