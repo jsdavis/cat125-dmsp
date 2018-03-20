@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed');
 
 html {
-    background: url("assets/background.jpg") no-repeat center fixed;
+    background: url("assets/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
+    height: 100%;
+    overflow: hidden;
     font-family: 'Roboto Condensed', 'Open Sans', sans-serif;
 }
 
